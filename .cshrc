@@ -84,13 +84,12 @@ alias precmd "source ~/bin/setprompt"
 
 ########################################################################
 # set path, search path wspath, search path for cd cdpath 
-########################################################################
 set cdpath = ( . $HOME )
 set wbpath = ( $path )
 set wspath = ( /usr/lib/X11 )
+
 ########################################################################
 # set shell properties
-########################################################################
 limit coredumpsize 1
 set history = 250
 set savehist = ($history merge)
@@ -115,46 +114,41 @@ set symlinks = ignore
 set autolist = ambiguous
 
 ########################################################################
-# set a few more paths
-########################################################################
-
-########################################################################
-# set sched
-########################################################################
-#sched 18:00 set prompt = "${baseprompt}($cwd:t) It\'s after 6 PM ... GO HOME "
-
-########################################################################
 # a few more setenv commands
-########################################################################
 setenv EDB_XTERM 'xterm -fn screen15 -geometry 80x50+0-125 -sb -sl 5000 -bg slateblue4 -fg white -n %T -T %T -xrm "XTerm*allowSendEvents: True" -e'
 #setenv PERLLIB /usr/local/perl5:$HOME/lib/perl:/usr/local/rrdtool-1.0.33/lib/perl:.
 
-setenv NETHACKOPTIONS "number_pad"
 #######################################################################
 #      set personal aliases here
-######################################################################
 source ${home}/.aliases
 source ${home}/.gitalias
 #source /usr/local/nawips/Gemenviron
 #source ${home}/scripts/colorssh/aliases.mine
+
 #######################################################################
 #      source macports here
-######################################################################
 set path=($path /opt/local/bin /opt/local/sbin)
+
 #######################################################################
 #  	set manpath
-#######################################################################
 #setenv MANPATH ${MANPATH}:/usr/local/share/man:/opt/local/man
+
 #######################################################################
 #   set display localhost
-######################################################################
 #setenv DISPLAY :0.0
 
+######################################################################
 # path for git
 setenv PATH /usr/local/git/bin:$PATH
 
-# Setting PATH for EPD-7.3-2
-# The orginal version is saved in .cshrc.pysave
-set path=(/Library/Frameworks/EPD64.framework/Versions/Current/bin $path)
-
+set OS = `uname`
+switch ($OS)
+case Linux:
+   # Setting PATH for EPD
+   set path=(/usr/local/epd/bin $path)
+   breaksw
+case Darwin:
+   set path=(/Library/Frameworks/EPD64.framework/Versions/Current/bin $path)
+   breaksw
+endsw
 
