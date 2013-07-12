@@ -39,7 +39,6 @@ al idv5		'cd /Applications/idv;java -Xmx4096m -jar idv.jar'
 al ip       'ipython qtconsole --pylab'
 al j        'jobs -l'
 al k9 		'kill -9'
-al ls       '/bin/ls -G'
 al la	    ls -Fa
 al lastg  	'last | grep -i \!* | grep -sv grep | less'
 al laston	'lastlog |grep -i \!*'
@@ -48,11 +47,10 @@ al ll       'ls -l'
 al lf       'ls -F'
 al llg      'ls -l |grep -i \!* | grep -v grep'
 al lo       'exit'
-al lsc      'ls -G'
-al lst      'ls -alt \!* | less -X'
-al lstr     'ls -altr \!* '
-al lst5     'ls -alt \!* |head -5'
-al lst10	'ls -alt \!* |head -10'
+al lst      'ls -alt | more'
+al lstr     'ls -altr '
+al lst5     'ls -alt | head -5'
+al lst10	'ls -alt | head -10'
 al ltar	    'tar tf'
 al meso		'cd ${HOME}/gem/meso'
 al mroe     'more'
@@ -102,3 +100,13 @@ al wwwerr	'\tail -f  ~www/apache/logs/error_log'
 al wwwme    'cd ~laufers/http'
 al x        'chmod u+x'
 
+set OS = `uname`
+switch ($OS)
+    case Linux:
+       # Setting PATH for EPD
+        al ls       '/bin/ls --color'
+        breaksw
+    case Darwin:
+        al ls       '/bin/ls -G'
+        breaksw
+endsw
