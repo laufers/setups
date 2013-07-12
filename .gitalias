@@ -1,5 +1,6 @@
 alias 	al 	'alias'
 al	gitb	'git branch'
-al	gitc	'git checkout'
+al	gitch	'git checkout'
+al  gitcom  'git checkout'
 al	gita	'git add'
 al 	gits	'git status'
