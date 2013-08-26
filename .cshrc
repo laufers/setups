@@ -147,7 +147,7 @@ case Linux:
    # Setting PATH for EPD
    set path=(/usr/local/epd/bin $path)
    # Setting PATH for Anaconda
-   set path=(/home/laufers/anaconda/bin $path)
+   #   set path=(/home/laufers/anaconda/bin $path)
    breaksw
 case Darwin:
    set path=(/Library/Frameworks/EPD64.framework/Versions/Current/bin $path)
@@ -158,4 +158,4 @@ endsw
 
 # Setting path for Anaconda
 # #
-set path=(/Users/laufers/anaconda/bin $path)
+# set path=(/Users/laufers/anaconda/bin $path)
