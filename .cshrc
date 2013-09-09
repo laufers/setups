@@ -128,6 +128,7 @@ source ${home}/.gitalias
 #######################################################################
 #      source macports here
 set path=($path /opt/local/bin /opt/local/sbin)
+setenv GADDIR /opt/local/share/grads
 
 #######################################################################
 #  	set manpath
