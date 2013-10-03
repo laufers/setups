@@ -142,6 +142,9 @@ setenv GADDIR /opt/local/share/grads
 # path for git
 setenv PATH /usr/local/git/bin:$PATH
 
+# path additions for homebew ruby
+set path = (/usr/local/opt/ruby/bin $path)
+
 set OS = `uname`
 switch ($OS)
 case Linux:
