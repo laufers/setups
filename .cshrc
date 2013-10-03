@@ -5,7 +5,7 @@
 if ($?USER == 0 || $?prompt == 0) exit
 
 set lpath = ( . ${HOME}/bin ${HOME}/work ${HOME}/perl ${HOME}/admin ${HOME}/scripts )
-set path = ( $path /usr/X11R6/bin /usr/local/bin $lpath ) 
+set path = ( /usr/local/bin $lpath $path /usr/X11R6/bin ) 
 
 umask 022
 ########################################################################
@@ -146,17 +146,13 @@ set OS = `uname`
 switch ($OS)
 case Linux:
    # Setting PATH for EPD
-   set path=(/usr/local/epd/bin $path)
+   # set path=(/usr/local/epd/bin $path)
    # Setting PATH for Anaconda
-   #   set path=(/home/laufers/anaconda/bin $path)
+   set path=(/home/laufers/anaconda/bin $path)
    breaksw
 case Darwin:
-   set path=(/Library/Frameworks/EPD64.framework/Versions/Current/bin $path)
+   # set path=(/Library/Frameworks/EPD64.framework/Versions/Current/bin $path)
    # Setting PATH for Anaconda
    set path=(/Users/laufers/anaconda/bin $path)
    breaksw
 endsw
-
-# Setting path for Anaconda
-# #
-# set path=(/Users/laufers/anaconda/bin $path)
