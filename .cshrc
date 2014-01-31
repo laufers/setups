@@ -159,3 +159,6 @@ case Darwin:
    set path=(/Users/laufers/anaconda/bin $path)
    breaksw
 endsw
+
+#   path for acquia drupal install
+set path=( $path "/Applications/acquia-drupal/drush" )
