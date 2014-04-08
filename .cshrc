@@ -93,7 +93,7 @@ set wspath = ( /usr/lib/X11 )
 limit coredumpsize 1
 set history = 250
 set savehist = ($history merge)
-set histdup = erase
+#set histdup = erase
 set noclobber
 set ignoreeof
 set notify
