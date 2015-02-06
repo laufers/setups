@@ -161,3 +161,6 @@ case Darwin:
 endsw
 
 #   path for acquia drupal install
+
+
+set path=( $path "/Applications/DevDesktop/drush" )
