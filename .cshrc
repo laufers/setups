@@ -5,7 +5,7 @@
 if ($?USER == 0 || $?prompt == 0) exit
 
 set lpath = ( . ${HOME}/bin ${HOME}/work ${HOME}/perl ${HOME}/admin ${HOME}/scripts )
-set path = ( /usr/local/bin $lpath $path /usr/X11R6/bin ) 
+#set path = ( /usr/local/bin $lpath $path /usr/X11R6/bin ) 
 
 umask 022
 ########################################################################
@@ -125,10 +125,7 @@ source ${home}/.gitalias
 #source /usr/local/nawips/Gemenviron
 #source ${home}/scripts/colorssh/aliases.mine
 
-#######################################################################
-#      source macports here
-set path=($path /opt/local/bin /opt/local/sbin)
-setenv GADDIR /opt/local/share/grads
+# GRADS
 
 #######################################################################
 #  	set manpath
@@ -139,8 +136,6 @@ setenv GADDIR /opt/local/share/grads
 #setenv DISPLAY :0.0
 
 ######################################################################
-# path for git
-setenv PATH /usr/local/git/bin:$PATH
 
 # path additions for homebew ruby
 set path = (/usr/local/opt/ruby/bin $path)
@@ -161,6 +156,8 @@ case Darwin:
 endsw
 
 #   path for acquia drupal install
-
-
 set path=( $path "/Applications/DevDesktop/drush" )
+
+#   set final path
+set path = ( /usr/local/bin $lpath $path /usr/X11R6/bin ) 
+
