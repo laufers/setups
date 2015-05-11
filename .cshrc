@@ -136,9 +136,15 @@ source ${home}/.gitalias
 #setenv DISPLAY :0.0
 
 ######################################################################
-
 # path additions for homebew ruby
 set path = (/usr/local/opt/ruby/bin $path)
+
+######################################################################
+# environment variable additions for boot2docker
+setenv DOCKER_TLS_VERIFY 1
+setenv DOCKER_HOST "tcp://192.168.59.103:2376"
+setenv DOCKER_CERT_PATH "/Users/laufers/.boot2docker/certs/boot2docker-vm"
+
 
 set OS = `uname`
 switch ($OS)
