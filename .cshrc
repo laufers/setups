@@ -91,8 +91,8 @@ set wspath = ( /usr/lib/X11 )
 ########################################################################
 # set shell properties
 limit coredumpsize 1
-set history = 250
-set savehist = ($history merge)
+set history = 2500
+set savehist = ( 25000 merge)
 #set histdup = erase
 set noclobber
 set ignoreeof
