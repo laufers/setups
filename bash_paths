@@ -1,1 +1,21 @@
-export PATH='.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:$PATH'
+#  Setting initial paths for myself
+export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:$PATH
+
+#  Setting paths for anaconda python
+OS=`uname`
+case $OS in
+	Linux)
+		# Setting PATH for Anaconda
+		export PATH=${HOME}/laufers/anaconda/bin:$PATH
+		;;
+ 
+	Darwin)
+   		# Setting PATH for Anaconda
+		export PATH=/Users/laufers/anaconda/bin:$PATH
+		;;
+esac
+
+#   Setting path for acquia drupal install
+export PATH=$PATH:/Applications/DevDesktop/drush
+
+

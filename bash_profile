@@ -80,28 +80,42 @@ On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
 # include aliases, edit aliases there
-source .aliases_bash
+source ${HOME}/setups/bash_alias
 # include functions, edit functions there 
-source .func_bash
+source ${HOME}/setups/bash_func
 
-# git prompt
+#   git prompt
 if [ -f ~/.git-prompt.sh ]; then
   . ~/.git-prompt.sh
 fi
 
-# git completion
+#   git completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# prompt with git
-PS1="\[$Blue\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$magenta\]\$(__git_ps1)\[$White\]> "
-# PS1="\h(\W)\$(__git_ps1)> "
+#   prompt with git
+PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BWhite\]> "
+#PS1="\h(\W)\$(__git_ps1)> "
 
+#  Setting initial paths for myself
 
+#   Base path
+export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:$PATH
 
-# User specific environment and startup programs
+#  Setting paths for anaconda python
+OS=`uname`
+case $OS in
+	Linux)
+		# Setting PATH for Anaconda
+		export PATH=${HOME}/laufers/anaconda/bin:$PATH
+		;;
+ 
+	Darwin)
+   		# Setting PATH for Anaconda
+		export PATH=/Users/laufers/anaconda/bin:$PATH
+		;;
+esac
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
-export PATH
+#   Setting path for acquia drupal install
+export PATH=$PATH:/Applications/DevDesktop/drush
