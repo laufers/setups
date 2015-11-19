@@ -1,6 +1,5 @@
 function ffile () { find . -iname '*'"$*"'*' -print ; }
 function gpw () {  grep -i "$*" /etc/passwd ; }
-function grepm () { grep "$*" | less ; }
 function h1 () { history "$*" | head -50 | more ; }
 function lastg () { last | grep -i "$*" | grep -sv grep | less ; }
 function laston () { lastlog | grep -i "$*" ; }
