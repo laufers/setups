@@ -108,7 +108,7 @@ OS=`uname`
 case $OS in
 	Linux)
 		# Setting PATH for Anaconda
-		export PATH=${HOME}/laufers/anaconda/bin:$PATH
+		export PATH=${HOME}/anaconda/bin:$PATH
 		;;
  
 	Darwin)
