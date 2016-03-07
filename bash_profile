@@ -84,6 +84,9 @@ source ${HOME}/setups/bash_alias
 # include functions, edit functions there 
 source ${HOME}/setups/bash_func
 
+#   set path as window title
+PROMPT_COMMAND='echo -ne "\033];${PWD}\007"'
+
 #   git prompt
 if [ -f ~/.git-prompt.sh ]; then
   . ~/.git-prompt.sh
