@@ -8,7 +8,7 @@ lastg () { last | grep -i "$*" | grep -sv grep | less ; }
 
 laston () { lastlog | grep -i "$*" ; }
 
-llg () {  ls -l |grep -i "$*" | grep -v grep ; }
+llg () {  ls -la |grep -i "$*" | grep -v grep ; }
 
 nuke () {  set j = `ps x | grep "$*" | grep -v grep`;\ kill -9 $j[1]; echo "kill -9 $j[1]" ; }
 
