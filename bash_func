@@ -18,9 +18,11 @@ psg () {  ps acux | grep -i "$*" | grep -v grep ; }
 
 pwg () {  grep -i "$*" /etc/passwd ; }
 
-rmcle () {  find . -name "$*" -print -exec \rm {} \; ; }
+rmfiles () {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
 
-rmfiles () {  find . -name "$*" -print -exec \rm {} \; ; }
+rmf () {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
+
+rmtest () {  find . -name '*'"$*"'*'  -exec \echo 'The file' {} 'will be deleted' \; ; }
 
 seek () { find . -name '*'"$*"'*' -print ; }
 
