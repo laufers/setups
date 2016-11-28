@@ -70,11 +70,7 @@ alias rmcur='find . -name ".curator_*" -print -exec \rm {} \;'
 alias rmds='find . -name ".DS_Store" -print -exec \rm {} \;'
 alias sl='ls'
 alias space='du -sk *| sort -nr - | less'
-<<<<<<< HEAD
-alias swc='cd ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/swc'
-=======
 alias swc='cd ${HOME}/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/swc'
->>>>>>> b37165b3bd9646959acc5f66feb697d6be6ee37f
 alias tail='tail -100'
 alias tailf='\tail -f '
 alias tim='date -u; date'
