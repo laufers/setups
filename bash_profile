@@ -99,7 +99,7 @@ fi
 
 #   prompt with git
 #PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BWhite\]> "
-PS1="$Cyan\h$Yellow(\W)$BBlue$(__git_ps1)$BWhite> $Color_Off"
+PS1="$Cyan\h$Yellow(\W)$BBlue\$(__git_ps1)$BWhite> $Color_Off"
 
 #  Setting initial paths for myself
 
