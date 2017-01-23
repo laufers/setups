@@ -106,6 +106,9 @@ PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BW
 #   Base path
 export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
 
+#  Setting CDPATH
+export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
+
 #  Setting paths for anaconda python
 
 OS=`uname`
@@ -126,6 +129,6 @@ export PATH=$PATH:/Applications/DevDesktop/drush
 
 #    Docker environment variables
 
-export DOCKER_TLS_VERIFY='1'
-export DOCKER_HOST='tcp://192.168.59.103:2376'
-export DOCKER_CERT_PATH='/Users/laufers/.boot2docker/certs/boot2docker-vm'
+#export DOCKER_TLS_VERIFY='1'
+#export DOCKER_HOST='tcp://192.168.59.103:2376'
+#export DOCKER_CERT_PATH='/Users/laufers/.boot2docker/certs/boot2docker-vm'
