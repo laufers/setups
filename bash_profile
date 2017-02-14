@@ -127,8 +127,5 @@ esac
 #   Setting path for acquia drupal install
 export PATH=$PATH:/Applications/DevDesktop/drush
 
-#    Docker environment variables
-
-#export DOCKER_TLS_VERIFY='1'
-#export DOCKER_HOST='tcp://192.168.59.103:2376'
-#export DOCKER_CERT_PATH='/Users/laufers/.boot2docker/certs/boot2docker-vm'
+#  added path for LoC Bagger
+export PATH=$PATH:/usr/local/bagger/bin
