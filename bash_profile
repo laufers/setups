@@ -81,7 +81,7 @@ On_IWhite='\e[0;107m'   # White
 
 # include aliases, edit aliases there
 source ${HOME}/setups/bash_alias
-# include functions, edit functions there 
+# include functions, edit functions there
 source ${HOME}/setups/bash_func
 
 #   set path as window title
@@ -103,6 +103,9 @@ PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BW
 
 #  Setting initial paths for myself
 
+#   Setting path for LaTex from MacTeX
+export PATH='/Library/TeX/texbin:$PATH'
+
 #   Base path
 export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
 
@@ -117,7 +120,7 @@ case $OS in
 		# Setting PATH for Anaconda
 		export PATH=${HOME}/anaconda/bin:$PATH
 		;;
- 
+
 	Darwin)
    		# Setting PATH for Anaconda
 		export PATH=/Users/laufers/anaconda/bin:$PATH
