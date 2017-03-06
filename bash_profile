@@ -104,7 +104,7 @@ PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BW
 #  Setting initial paths for myself
 
 #   Setting path for LaTex from MacTeX
-export PATH='/Library/TeX/texbin:$PATH'
+export PATH=/Library/TeX/texbin:$PATH
 
 #   Base path
 export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
