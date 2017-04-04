@@ -85,10 +85,14 @@ source ${HOME}/setups/bash_alias
 source ${HOME}/setups/bash_func
 
 # set history characteristics
-export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
-export HISTSIZE=5000                   # big big history
+export HISTCONTROL=ignoredups:erasedups # no duplicate entries
+export HISTSIZE=5000                   	# big big history
 export HISTFILESIZE=10000               # big big history
-shopt -s histappend
+shopt -s histappend   					# append history
+shopt -s histverify   					# edit history recall
+
+# set to allow vi edits on the command line
+set -o vi
 
 #   set path as window title
 PROMPT_COMMAND='echo -ne "\033];${PWD}\007"'
