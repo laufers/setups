@@ -56,12 +56,12 @@ OS=`uname`
 case $OS in
 	Linux)
 		# Setting PATH for Anaconda
-		export PATH=${HOME}/anaconda/bin:$PATH
+		export PATH=${HOME}/anaconda3/bin:$PATH
 		;;
 
 	Darwin)
    		# Setting PATH for Anaconda
-		export PATH=/Users/laufers/anaconda/bin:$PATH
+		export PATH=/Users/laufers/anaconda3/bin:$PATH
 		;;
 esac
 
