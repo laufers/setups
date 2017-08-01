@@ -14,7 +14,7 @@ nuke () {  set j = `ps x | grep "$*" | grep -v grep`;\ kill -9 $j[1]; echo "kill
 
 pman () {  man -t "$*" | open -f -a /Applications/Preview.app ; }
 
-psg () {  ps acux | grep -i "$*" | grep -v grep ; }
+psg () {  ps aux | grep -i "$*" | grep -v grep ; }
 
 pwg () {  grep -i "$*" /etc/passwd ; }
 
@@ -28,7 +28,7 @@ seek () { find . -name '*'"$*"'*' -print ; }
 
 slay () { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
 
-cmdfreq() { 
+cmdfreq() {
 	num=${1:-10}
 	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
 	}
