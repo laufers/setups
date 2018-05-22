@@ -7,8 +7,6 @@ ffile () { find . -iname '*'"$*"'*' -print ; }
 
 gpw () { grep -i "$*" /etc/passwd ; }
 
-h1 () { history  50 | more ; }
-
 laston () { last| grep -i "$*" | head -15; }
 
 llg () {  ls -la |grep -i "$*" | grep -v grep ; }
