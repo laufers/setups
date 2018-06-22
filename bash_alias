@@ -32,6 +32,7 @@ alias globe='oneworld=$( curl -Ls http://bit\.ly/globe_vt );while sleep .1;do pv
 alias globe2='curl -s http://artscene.textfiles\.com/vt100/globe.vt | pv -L9600 -q'
 alias h='history 30'
 alias here='open . -a iterm'
+alias hg='history | grep '
 alias http='cd ${HOME}/http'
 alias idv='cd /Applications/idv;java -Xmx512m -jar idv.jar'
 alias idv2='cd /Applications/idv;java -Xmx1024m -jar idv.jar'
