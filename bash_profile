@@ -64,9 +64,3 @@ case $OS in
 		export PATH=/Users/laufers/anaconda3/bin:$PATH
 		;;
 esac
-
-#   Setting path for acquia drupal install
-export PATH=$PATH:/Applications/DevDesktop/drush
-
-#  added path for LoC Bagger
-export PATH=$PATH:/usr/local/bagger/bin
