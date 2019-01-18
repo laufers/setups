@@ -41,16 +41,20 @@ PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BW
 
 #  Setting initial paths for myself
 
+#   Base path
+export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
+
 #   Setting path for LaTex from MacTeX
 export PATH=/Library/TeX/texbin:$PATH
 
-#   Base path
-export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
+#	Setting path for HomeBrew ruby
+export PATH=/usr/local/opt/ruby/bin:$PATH
 
 #  Setting CDPATH
 export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
 
 #  Setting paths for anaconda python
+
 
 OS=`uname`
 case $OS in
