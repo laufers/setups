@@ -61,6 +61,7 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias mroe='more'
 alias mv='mv -iv'
 alias mywww='cd ${HOME}/http'
+alias myip='curl http://icanhazip.com'
 alias nmap='sudo nmap -sS '
 alias notebook='jupyter notebook '
 alias nb='jupyter notebook '
