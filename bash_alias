@@ -8,6 +8,10 @@ alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
+
+# rsyncs for backups
+alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m-\%d)" ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries /Volumes/UL-USERS/backup_oulib/'
+
 alias al='alias'
 alias ami='whoami'
 alias bye='exit'
