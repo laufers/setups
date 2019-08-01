@@ -15,7 +15,7 @@ alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m
 # my most used aliases
 alias al='alias'
 alias ami='whoami'
-alias audiorestart="sudo kill -9 `ps ax | grep coreaudio[a-z] | cut -c 1-8`"
+alias audiorestart="sudo kill -9 \`ps ax | grep coreaudio[a-z] | cut -c 1-8\`"
 alias bye='exit'
 alias ccore='find $HOME -name core -print -exec /usr/bin/rm {} \;'
 alias cdlib='cd ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/'
