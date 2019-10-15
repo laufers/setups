@@ -26,8 +26,19 @@ set -o vi
 PROMPT_COMMAND='echo -ne "\033];${PWD}\007"'
 
 #   git prompt
-if [ -f ~/.git-prompt.sh ]; then
-  . ~/.git-prompt.sh
+#if [ -f ~/.git-prompt.sh ]; then
+#  . ~/.git-prompt.sh
+#fi
+
+#   bash git prompt
+GIT_PROMPT_THEME=Single_line_Minimalist_2
+#GIT_PROMPT_THEME=
+#GIT_PROMPT_THEME=Custom
+#GIT_PROMPT_THEME=Default
+
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
 #   git completion
@@ -36,7 +47,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 #   prompt with git
-PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\$(__git_ps1)\[$BWhite\]> \[$Color_Off\]"
+PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\w\[$BWhite\]> \[$Color_Off\]"
 #PS1="$Cyan\h$Yellow(\W)$BBlue\$(__git_ps1)$BWhite> $Color_Off"
 
 #  Setting initial paths for myself
