@@ -14,4 +14,4 @@ This repository installs as the directory "setups" which I clone into my \${HOME
 
 From the bash_profile, I then source the bash_alias and bash_function files.
 
-I execute the setup_env.sh script to download and install the git_prompt and git_complete program (which I believe are now included in current versions of git2.x). I like having tab complete with git and also seeing what branch I may be working with as part of my prompt.
+I execute the setup_env.sh script to download and install the git_prompt and git_complete program and most recently bash-git (which I believe are now included in current versions of git2.x). I like having tab complete with git and also seeing what branch I may be working with as part of my prompt.

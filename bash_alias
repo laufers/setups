@@ -63,6 +63,7 @@ alias lst10='ls -alt | head -10'
 alias lst5='ls -alt | head -5'
 alias lstr='ls -altr '
 alias ltar='tar tf'
+al matrix='clear ; for t in "Wake up `whoami`" "The Matrix has you" "Follow the white rabbit" "Knock, knock"; do clear; pv -qL5 <<< `printf "${Green}$t${White}"`; sleep 4; done'
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias mroe='more'
 alias mv='mv -iv'
