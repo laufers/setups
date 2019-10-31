@@ -6,11 +6,20 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # set colors, edit or swtich colors here
-source ${HOME}/setups/bash_colors
-# include aliases, edit aliases there
-source ${HOME}/setups/bash_alias
-# include functions, edit functions there
-source ${HOME}/setups/bash_func
+
+if [ -f "${HOME}/setups/bash_colors" ]; then
+    source ${HOME}/setups/bash_colors
+fi 
+
+# include aliases, edit aliases here
+if [ -f "${HOME}/setups/bash_alias" ]; then
+    source ${HOME}/setups/bash_alias
+fi
+
+# include functions, edit functions here
+if [ -f "${HOME}/setups/bash_func" ]; then
+    source ${HOME}/setups/bash_func
+fi
 
 # set history characteristics
 export HISTCONTROL=ignoredups:erasedups # no duplicate entries
