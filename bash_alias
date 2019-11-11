@@ -13,6 +13,7 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m-\%d)" ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries /Volumes/UL-USERS/backup_oulib/'
 
 # my most used aliases
+alias act='conda activate ' 
 alias al='alias'
 alias ami='whoami'
 alias audiorestart="sudo kill -9 \`ps ax | grep coreaudio[a-z] | cut -c 1-8\`"
@@ -22,6 +23,7 @@ alias cdlib='cd ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/'
 alias clr='clear'
 alias cls='clear'
 alias cp='cp -iv'
+alias deact='conda deactiveate'
 alias del='rm -i'
 alias df='df -h'
 alias dir='ls -F'
