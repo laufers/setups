@@ -1,33 +1,41 @@
+act() {
+  conda activate "$1"; conda env list
+  }
+
 cmdfreq() {
 	num=${1:-10}
 	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
 	}
 
-ffile () { find . -iname '*'"$*"'*' -print ; }
+deact() {
+  conda deactivate; conda env list
+  }
 
-gpw () { grep -i "$*" /etc/passwd ; }
+ffile() { find . -iname '*'"$*"'*' -print ; }
 
-laston () { last| grep -i "$*" | head -15; }
+gpw() { grep -i "$*" /etc/passwd ; }
 
-llg () {  ls -la |grep -i "$*" | grep -v grep ; }
+laston() { last| grep -i "$*" | head -15; }
 
-nuke () {  set j = `ps x | grep "$*" | grep -v grep`;\ kill -9 $j[1]; echo "kill -9 $j[1]" ; }
+llg() {  ls -la |grep -i "$*" | grep -v grep ; }
 
-pman () {  man -t "$*" | open -f -a /Applications/Preview.app ; }
+nuke() {  set j = `ps x | grep "$*" | grep -v grep`;\ kill -9 $j[1]; echo "kill -9 $j[1]" ; }
 
-psg () {  ps aux | grep -i "$*" | grep -v grep ; }
+pman() {  man -t "$*" | open -f -a /Applications/Preview.app ; }
 
-pwg () {  grep -i "$*" /etc/passwd ; }
+psg() {  ps aux | grep -i "$*" | grep -v grep ; }
 
-rmfiles () {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
+pwg() {  grep -i "$*" /etc/passwd ; }
 
-rmf () {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
+rmfiles() {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
 
-rmtest () {  find . -name '*'"$*"'*'  -exec \echo 'The file' {} 'will be deleted' \; ; }
+rmf() {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
 
-seek () { find . -name $1 -print ; }
+rmtest() {  find . -name '*'"$*"'*'  -exec \echo 'The file' {} 'will be deleted' \; ; }
 
-slay () { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
+seek() { find . -name $1 -print ; }
+
+slay() { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
 
 humanbytes()
 {
