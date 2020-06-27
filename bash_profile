@@ -73,6 +73,9 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 #  Setting CDPATH
 export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
 
+# turn off Apple zsh message
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 #  Setting paths for anaconda python
 
 # old setting paths for Python
