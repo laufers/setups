@@ -79,7 +79,6 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 #  Setting paths for anaconda python
 
 # old setting paths for Python
-
 # OS=`uname`
 # case $OS in
 # 	Linux)
