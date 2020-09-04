@@ -107,3 +107,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# ahj - remove the default Python environment artifact "(base)" from prompt
+PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
+
