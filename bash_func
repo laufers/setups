@@ -37,6 +37,8 @@ seek() { find . -name $1 -print ; }
 
 slay() { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
 
+ytl() { youtube-dl --extract-audio --audio-format mp3 --playlist-5tart $1 --playlist-end $2 $3; }
+
 humanbytes()
 {
   local SIZE=$1
