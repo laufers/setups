@@ -15,7 +15,6 @@ alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m
 # my most used aliases
 alias al='alias'
 alias ami='whoami'
-alias audiorestart="sudo kill -9 \`ps ax | grep coreaudio[a-z] | cut -c 1-8\`"
 alias bye='exit'
 alias ccore='find $HOME -name core -print -exec /usr/bin/rm {} \;'
 alias cdlib='cd ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/'
@@ -100,6 +99,7 @@ alias top10='/bin/ps aux |head -10'
 alias u='uptime'
 alias untar='tar xfzv'
 alias update_sw='sw_update'
+alias restartaudio="sudo kill -9 \`ps ax | grep coreaudio[a-z] | cut -c 1-8\`"
 alias restartvideo='sudo killall VDCAssistant'
 alias vpnon='scutil --nc start ou_vpn'
 alias vpnoff='scutil --nc stop ou_vpn'
