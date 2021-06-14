@@ -64,6 +64,7 @@ alias lst5='ls -alt | head -5'
 alias lstr='ls -altr '
 alias ltar='tar tf'
 alias lo='exit'
+alias lab='jupyter lab'
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias mroe='more'
 alias mv='mv -iv'
