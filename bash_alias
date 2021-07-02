@@ -12,6 +12,8 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 # rsyncs for backups
 alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m-\%d)" ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries /Volumes/UL-USERS/backup_oulib/'
 
+alias musicsync='rsync -avh  --delete --update --iconv=utf-8-mac,utf-8 ~/Music/Music/Media.localized/ /Volumes/homedrive/mjl_music/Media.localized/'
+
 # my most used aliases
 alias al='alias'
 alias ami='whoami'
@@ -49,6 +51,7 @@ alias idv5='cd /Applications/idv;java -Xmx4096m -jar idv.jar'
 alias ip='jupyter qtconsole'
 alias j='jobs -l'
 alias jekserv='bundle exec jekyll serve'
+alias jlab='jupyter lab'
 alias k9='kill -9'
 alias library='cd ~/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries/'
 alias la='(ls -Fa)'
@@ -64,7 +67,6 @@ alias lst5='ls -alt | head -5'
 alias lstr='ls -altr '
 alias ltar='tar tf'
 alias lo='exit'
-alias lab='jupyter lab'
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias mroe='more'
 alias mv='mv -iv'
