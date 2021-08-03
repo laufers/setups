@@ -14,7 +14,6 @@ alias libsync='rsync -rav --delete --backup --backup-dir="backup_$(date +\%Y-\%m
 
 alias musicsync='rsync -avh  --delete --update --iconv=utf-8-mac,utf-8 ~/Music/Music/Media.localized/ /Volumes/homedrive/mjl_music/Media.localized/'
 
-
 # my most used aliases
 alias al='alias'
 alias ami='whoami'
