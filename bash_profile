@@ -62,13 +62,16 @@ PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\[$BWhite\]-> \[$C
 #  Setting initial paths for myself
 
 #   Base path
-export PATH=.:${HOME}/bin:${HOME}/work:${HOME}/perl:${HOME}/admin:${HOME}/scripts:${HOME}/.local/bin:$PATH
+export PATH=.:${HOME}/bin:${HOME}/perl:${HOME}/scripts:${HOME}/.local/bin:$PATH
 
 #   Setting path for LaTex from MacTeX
 export PATH=/Library/TeX/texbin:$PATH
 
 #	Setting path for HomeBrew ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
+
+#   Setting path for Sublime Text
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 #  Setting CDPATH
 export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
