@@ -53,6 +53,8 @@ fi
 #   git completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
+elif [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+  . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
 #   prompt with git
@@ -71,7 +73,7 @@ export PATH=/Library/TeX/texbin:$PATH
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
 #   Setting path for Sublime Text
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="/Applications/Sublime Teffxt.app/Contents/SharedSupport/bin:$PATH"
 
 #  Setting CDPATH
 export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
