@@ -28,6 +28,9 @@ export HISTFILESIZE=10000               # big big history
 shopt -s histappend   					# append history
 shopt -s histverify   					# edit history recall
 
+# remove highlighting pasted text
+bind "set enable-bracketed-paste off"
+
 # set to allow vi edits on the command line
 set -o vi
 
@@ -80,22 +83,6 @@ export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
 
 # turn off Apple zsh message
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
-#  Setting paths for anaconda python
-
-# old setting paths for Python
-# OS=`uname`
-# case $OS in
-# 	Linux)
-# 		# Setting PATH for Anaconda
-# 		export PATH=${HOME}/anaconda3/bin:$PATH
-# 		;;
-
-# 	Darwin)
-#    		# Setting PATH for Anaconda
-# 		export PATH=/Users/laufers/anaconda3/bin:$PATH
-# 		;;
-# esac
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
