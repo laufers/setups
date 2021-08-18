@@ -73,7 +73,8 @@ export PATH=.:${HOME}/bin:${HOME}/perl:${HOME}/scripts:${HOME}/.local/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 
 #	Setting path for HomeBrew ruby
-export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/opt/ruby\@2/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
+# export PATH=/usr/local/opt/ruby/bin:$PATH
 
 #   Setting path for Sublime Text
 export PATH="/Applications/Sublime Teffxt.app/Contents/SharedSupport/bin:$PATH"
