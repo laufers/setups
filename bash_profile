@@ -73,6 +73,7 @@ export PATH=.:${HOME}/bin:${HOME}/perl:${HOME}/scripts:${HOME}/.local/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 
 #	Setting path for HomeBrew ruby
+export SDKROOT=$(xcrun --show-sdk-path)
 export PATH=/usr/local/opt/ruby\@2/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
 # export PATH=/usr/local/opt/ruby/bin:$PATH
 
