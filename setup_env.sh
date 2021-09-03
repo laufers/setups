@@ -1,10 +1,17 @@
 #! /usr/bin/env sh
 
-# get git-prompt
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+# execute git config global settings
 
-# get git-complete
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+git config --global user.name 'Mark Laufersweiler'
+git config --global core.autocrlf input
+git config --global init.defaultBranch main
+
+echo 'Enter your email you wish to use with Git and GitHub: '
+read email
+git config  --global user.email $email
 
 # get bash-git-prompt
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+
+if [ -d !~/.bash-git-prompt ]; then
+	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+fi
