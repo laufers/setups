@@ -12,6 +12,6 @@ git config  --global user.email $email
 
 # get bash-git-prompt
 
-if [ -d !~/.bash-git-prompt ]; then
+if [ ! -d ~/.bash-git-prompt ]; then
 	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
