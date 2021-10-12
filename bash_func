@@ -1,4 +1,4 @@
-act() {
+activ() {
   conda activate "$1"; conda env list
   }
 
