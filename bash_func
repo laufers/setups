@@ -8,7 +8,7 @@ cmdfreq() {
 	}
 
 deact() {
-  conda deactivate; conda env list
+  conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
   }
 
 ffile() { find . -iname '*'"$*"'*' -print ; }
