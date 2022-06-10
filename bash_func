@@ -11,33 +11,31 @@ deact() {
   conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
   }
 
-ffile() { find . -iname '*'"$*"'*' -print ; }
+ffile() { find . -type f -name "*$1*" -print ; }
 
-gpw() { grep -i "$*" /etc/passwd ; }
+gpw() { grep -i "$1" /etc/passwd ; }
 
-laston() { last| grep -i "$*" | head -15; }
+laston() { last| grep -i "$1" | head -15; }
 
-llg() {  ls -la |grep -i "$*" | grep -v grep ; }
+llg() {  ls -la |grep -i "$1" | grep -v grep ; }
 
-nuke() {  set j = `ps x | grep "$*" | grep -v grep`;\ kill -9 $j[1]; echo "kill -9 $j[1]" ; }
+nuke() {  set j = `ps x | grep "$1" | grep -v grep`;\ kill -9 $j[1]; echo "kill -9 $j[1]" ; }
 
-pman() {  man -t "$*" | open -f -a Preview ; }
+pman() {  man -t "$1" | open -f -a Preview ; }
 
-psg() {  ps aux | grep -i "$*" | grep -v grep ; }
+psg() {  ps aux | grep -i "$1" | grep -v grep ; }
 
-pwg() {  grep -i "$*" /etc/passwd ; }
+pwg() {  grep -i "$1" /etc/passwd ; }
 
-rmfiles() {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
+rmfiles() {  find . -name "*$1*" -print -exec \rm {} \; ; }
 
-rmf() {  find . -name '*'"$*"'*' -print -exec \rm {} \; ; }
+rmf() {  find . -name "*$1*" -print -exec \rm {} \; ; }
 
-rmtest() {  find . -name '*'"$*"'*'  -exec \echo 'The file' {} 'will be deleted' \; ; }
+rmtest() {  find . -name "*$1*"  -exec \echo 'The file' {} 'will be deleted' \; ; }
 
 seek() { find . -name $1 -print ; }
 
 slay() { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
-
-ytl() { youtube-dl --extract-audio --audio-format mp3 --playlist-5tart $1 --playlist-end $2 $3; }
 
 humanbytes()
 {
