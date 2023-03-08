@@ -24,8 +24,8 @@ fi
 # set history characteristics
 export HISTCONTROL=ignoredups:erasedups # no duplicate entries
 export HISTSIZE=5000                   	# big big history
-export HISTFILESIZE=10000               # big big history
-shopt -s histappend   					# append history
+export HISTFILESIZE=100000              # big big history
+shopt -s histappend   					# append history file on logout
 shopt -s histverify   					# edit history recall
 
 # remove highlighting pasted text
