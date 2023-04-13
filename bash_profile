@@ -125,3 +125,8 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# Activate micromamba python for select machines
+if [[ $HOSTNAME == *'wetfly'* ]] then
+    micromamba activate
+fi
