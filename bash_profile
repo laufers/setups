@@ -72,12 +72,12 @@ export PATH=.:${HOME}/bin:${HOME}/perl:${HOME}/scripts:${HOME}/.local/bin:$PATH
 #   Setting path for LaTex from MacTeX
 export PATH=/Library/TeX/texbin:$PATH
 
-#	Setting path and env for HomeBrew ruby
+#	Setting path and env for HomeBrew s
 if [ -f /usr/bin/xcrun ]; then
 	export SDKROOT=$(xcrun --show-sdk-path)
 fi
-export PATH=/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH
-export PATH=/Users/laufers/.local/share/gem/ruby/3.1.0/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.2.0/bin:$PATH
+export PATH=/Users/laufers/.local/share/gem/ruby/3.2.0/bin:$PATH
 # export PATH=/usr/local/opt/ruby\@2/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
 # export PATH=/usr/local/opt/ruby/bin:$PATH
 
@@ -127,6 +127,7 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Activate micromamba python for select machines
-if [[ $HOSTNAME == *'wetfly'* ]] then
+if [[ $HOSTNAME == *'wetfly'* ]] 
+then
     micromamba activate
 fi
