@@ -127,7 +127,11 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Activate micromamba python for select machines
-if [[ $HOSTNAME == *'wetfly'* ]] 
+# if [[ $HOSTNAME == *'wetfly'* ]] 
+if [[ $HOSTNAME == *'LC02X52J1JGH6'* ]] 
+
 then
     micromamba activate
+    PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
+
 fi
