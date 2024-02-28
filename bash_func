@@ -37,6 +37,31 @@ seek() { find . -name $1 -print ; }
 
 slay() { set j = `ps1 guw | grep "$@" | grep $USER | grep -v grep` ; echo $j ; k9 $j[2] ; }
 
+whentime() { 
+  # if [ -z "$1" ]; then
+  #   time_str=0
+  # else
+  #   time_str="$1"
+  # fi
+  
+  python -c "
+import datetime
+import sys
+
+def calculate_time(delta_hours):
+  current_time = datetime.datetime.now()
+  delta = datetime.timedelta(hours=delta_hours)
+  new_time = current_time + delta
+  return new_time.strftime('%a %b %d %H:%M:%S %Z %Y')
+
+try:
+  delta_hours = int($1) 
+except IndexError:
+  delta_hours = 0
+
+print(calculate_time(delta_hours))"
+}
+
 humanbytes()
 {
   local SIZE=$1
