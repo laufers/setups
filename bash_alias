@@ -119,5 +119,5 @@ alias wp='which python'
 alias wtf='wtf -o'
 alias x='chmod u+x'
 alias ym='youtube-dl --extract-audio --audio-format mp3'
-#alias gym="youtube-dl --extract-audio --audio-format mp3 --playlist-start 1 --playlist-end 18"
-alias gym="youtube-dl --extract-audio --audio-format mp3 --yes-playlist "
+#alias gym="yt-dlp --extract-audio --audio-format mp3 --playlist-start 1 --playlist-end 18"
+alias gym="yt-dlp --extract-audio --audio-format mp3 --yes-playlist "

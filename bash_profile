@@ -128,7 +128,7 @@ unset __mamba_setup
 
 # Activate micromamba python for select machines
 # if [[ $HOSTNAME == *'wetfly'* ]] 
-if [[ $HOSTNAME == *'LC02X52J1JGH6'* ]] 
+if [[ $HOSTNAME == *'LC02X52J1JGH6'* || $HOSTNAME == *'dryfly'* ]] 
 
 then
     micromamba activate
