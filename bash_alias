@@ -76,6 +76,7 @@ alias lo='exit'
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias mroe='more'
 alias mv='mv -iv'
+alias myhtpd='python3 -m http.server 8000 --bind 127.0.0.1'
 alias mywww='cd ${HOME}/http'
 alias myip='curl http://icanhazip.com'
 alias naut='cd ~/oulib/data_services/nautilus'
