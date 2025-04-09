@@ -90,6 +90,12 @@ export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
 # turn off Apple zsh message
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+
+# ahj - remove the default Python environment artifact "(base)" from prompt
+PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
+
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/laufers/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -109,6 +115,7 @@ unset __conda_setup
 PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
 
 
+
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE='/usr/local/bin/micromamba';
@@ -122,12 +129,6 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-# Activate micromamba python for select machines
-# if [[ $HOSTNAME == *'wetfly'* ]] 
-if [[ $HOSTNAME == *'LC02X52J1JGH6'* || $HOSTNAME == *'dryfly'* ]] 
+micromamba activate 
+PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
 
-then
-    micromamba activate
-    PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' )
-
-fi

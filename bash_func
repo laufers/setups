@@ -11,6 +11,12 @@ deact() {
   conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
   }
 
+clean-prompt() {
+  PS1=$(echo "$PS1" | perl -pe 's/^\(\/Users\/laufers\/anaconda3\)\s*//')
+  PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//')
+}
+
+
 ffile() { find . -type f -name "*$1*" -print ; }
 
 gpw() { grep -i "$1" /etc/passwd ; }
