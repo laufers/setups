@@ -39,7 +39,9 @@ alias fnum='ls * | wc -l'
 alias follinks='set symlinks = ignore'
 alias gemcolor='less ${HOME}/gem/gemcolor'
 alias get='git'
-alias get-container-images="kubectl get pods -n oulib -o jsonpath='{.items[*].spec.initContainers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c; kubectl get pods -n oulib -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | grep -v quay"
+#alias get-container-images="kubectl get pods -n oulib -o jsonpath='{.items[*].spec.initContainers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c; kubectl get pods -n oulib -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | grep -v quay"
+alias get-container-images='echo "Image Usage Summary:" && echo "--------------------" && kubectl get pods -n oulib -o jsonpath="{.items[*].spec.initContainers[*].image} {.items[*].spec.containers[*].image}" | tr -s "[[:space:]]" "\n" | grep -v quay | grep -v "^$" | sort | uniq -c | sort -nr | awk '\''{split($2,parts,"/"); repo=parts[length(parts)]; split(repo,name_tag,":"); shortname=name_tag[1]; printf "%-3s - %-18s : %s\n", $1, shortname, $2}'\'''
+
 alias gh='history | grep --color=auto'
 alias globe='oneworld=$( curl -Ls http://bit\.ly/globe_vt );while sleep .1;do pv -L4220 -q <<<"$oneworld";done'
 alias globe2='curl -s http://artscene.textfiles\.com/vt100/globe.vt | pv -L9600 -q'
