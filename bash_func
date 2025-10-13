@@ -1,20 +1,20 @@
-activ() {
-  conda activate "$1"; conda env list
-  }
+# activ() {
+#   conda activate "$1"; conda env list
+#   }
 
-cmdfreq() {
-	num=${1:-10}
-	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
-	}
+# cmdfreq() {
+# 	num=${1:-10}
+# 	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
+# 	}
 
-deact() {
-  conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
-  }
+# deact() {
+#   conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
+#   }
 
-clean-prompt() {
-  PS1=$(echo "$PS1" | perl -pe 's/^\(\/Users\/laufers\/anaconda3\)\s*//')
-  PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//')
-}
+# clean-prompt() {
+#   PS1=$(echo "$PS1" | perl -pe 's/^\(\/Users\/laufers\/anaconda3\)\s*//')
+#   PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//')
+# }
 
 
 ffile() { find . -type f -name "*$1*" -print ; }
@@ -50,7 +50,7 @@ whentime() {
   #   time_str="$1"
   # fi
   
-  python -c "
+python -c "
 import datetime
 import sys
 
@@ -83,4 +83,57 @@ humanbytes()
   else
     printf "%7.02f %s\n" $SIZE $UNIT
   fi
+}
+
+get_container_images() {
+  local ns="${1:-oulib}"  # Use argument as namespace, default to 'oulib' if none provided
+
+  echo "Image Usage Summary: $(date)"
+  echo "--------------------"
+
+  kubectl get pods -n "$ns" -o jsonpath="{.items[*].spec.initContainers[*].image} {.items[*].spec.containers[*].image}" \
+  | tr -s "[[:space:]]" "\n" \
+  | grep -v quay \
+  | grep -v "^$" \
+  | sort \
+  | uniq -c \
+  | sort -nr \
+  | awk '{
+      split($2, parts, "/");
+      repo = parts[length(parts)];
+      split(repo, name_tag, ":");
+      shortname = name_tag[1];
+      printf "%-3s - %-18s : %s\n", $1, shortname, $2
+    }'
+}
+
+
+pod_images() {
+  local ns="${1:-oulib}"  # default to 'oulib' if no argument is given
+
+  kubectl get pods -n "$ns" --no-headers \
+    --output=custom-columns="IMAGE:.spec.containers[*].image,NAME:.metadata.name" \
+  | grep -v -e hub -e proxy \
+  | awk '{
+      split($1, a, "/");
+      split(a[length(a)], b, ":");
+      printf "%-20s %-30s\n", b[1], $2
+    }'
+}
+
+
+nautuse() {
+  clear
+
+  # First section: container images summary
+  get_container_images "$@"   # pass namespace if provided
+  echo
+
+  # Pause for user
+  read -p "Press enter to see user images" dummy
+  echo
+  echo "  image                 user"
+
+  # Second section: pod images
+  pod_images "$@"
 }
