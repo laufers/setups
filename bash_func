@@ -88,7 +88,7 @@ humanbytes()
 get_container_images() {
   local ns="${1:-oulib}"  # Use argument as namespace, default to 'oulib' if none provided
 
-  echo "Image Usage Summary: $(date)"
+  echo "Image Usage Summary for $ns: $(date)"
   echo "--------------------"
 
   kubectl get pods -n "$ns" -o jsonpath="{.items[*].spec.initContainers[*].image} {.items[*].spec.containers[*].image}" \
@@ -126,14 +126,17 @@ nautuse() {
   clear
 
   # First section: container images summary
-  get_container_images "$@"   # pass namespace if provided
+  get_container_images "$1"   # pass namespace if provided
   echo
 
   # Pause for user
-  read -p "Press enter to see user images" dummy
+  read -rep $'Press enter q to quit or enter l to see user images. \n' dummy
+  if [[ $dummy == 'q' ]] || [[ $dummy == 'q' ]] || [[ $dummy == '' ]]; then 
+    return
+  fi
   echo
   echo "  image                 user"
 
   # Second section: pod images
-  pod_images "$@"
+  pod_images "$1"
 }

@@ -85,7 +85,7 @@ export PATH=/Users/laufers/.local/share/gem/ruby/3.2.0/bin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 #  Setting CDPATH
-export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
+# export CDPATH=:$HOME:/Users/laufers/Dropbox\ \(Univ.\ of\ Oklahoma\)/OULibraries
 
 # turn off Apple zsh message
 export BASH_SILENCE_DEPRECATION_WARNING=1
