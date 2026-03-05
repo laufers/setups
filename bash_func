@@ -2,19 +2,21 @@
 #   conda activate "$1"; conda env list
 #   }
 
-# cmdfreq() {
-# 	num=${1:-10}
-# 	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
-# 	}
+ cmdfreq() {
+ 	num=${1:-10}
+ 	history | cut -c 8- | sort | uniq -c | sort -rn | head -${num}
+ 	}
 
 # deact() {
 #   conda deactivate; PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//' ); conda env list
 #   }
 
-# clean-prompt() {
+  clean-prompt() {
 #   PS1=$(echo "$PS1" | perl -pe 's/^\(\/Users\/laufers\/anaconda3\)\s*//')
-#   PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//')
-# }
+#    PS1=$(echo "$PS1" | perl -pe 's/^\(base\)\s*//')
+    PS1=$(echo "$PS1" | perl -pe 's/^\(${1}\)\s*//')
+
+  }
 
 
 ffile() { find . -type f -name "*$1*" -print ; }

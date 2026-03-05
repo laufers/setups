@@ -129,3 +129,8 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 source <(kubectl completion bash)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/laufers/.lmstudio/bin"
+# End of LM Studio CLI section
+
