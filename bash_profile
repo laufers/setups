@@ -56,8 +56,8 @@ fi
 #   git completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
-elif [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-  . /usr/local/etc/bash_completion.d/git-completion.bash
+elif [ -f "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]; then
+  . /opt/homebrew/etc/bash_completion.d/git-completion.bash
 fi
 
 #   prompt with git
