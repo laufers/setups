@@ -44,14 +44,25 @@ PROMPT_COMMAND='echo -ne "\033];${PWD}\007"'
 
 #   bash git prompt
 GIT_PROMPT_THEME=Single_line_Minimalist_2
-#GIT_PROMPT_THEME=
+# GIT_PROMPT_THEME=Solarized
 #GIT_PROMPT_THEME=Custom
 #GIT_PROMPT_THEME=Default
 
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=1
-    source $HOME/.bash-git-prompt/gitprompt.sh
+
+if [ -f "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    __GIT_PROMPT_DIR="/opt/homebrew/opt/bash-git-prompt/share"
+    source "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh"
 fi
+
+
+# if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+#     GIT_PROMPT_ONLY_IN_REPO=1
+#     source $HOME/.bash-git-prompt/gitprompt.sh
+# fi
+
+#   prompt with git
+PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\[$BWhite\]-> \[$Color_Off\]"
+#PS1="$Cyan\h$Yellow(\W)$BBlue\$(__git_ps1)$BWhite> $Color_Off"
 
 #   git completion
 if [ -f ~/.git-completion.bash ]; then
@@ -59,10 +70,6 @@ if [ -f ~/.git-completion.bash ]; then
 elif [ -f "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]; then
   . /opt/homebrew/etc/bash_completion.d/git-completion.bash
 fi
-
-#   prompt with git
-PS1="\[$Cyan\]\h\[$Yellow\]\[$Yellow\](\W)\[\033[m\]\[$BBlue\]\[$BWhite\]-> \[$Color_Off\]"
-#PS1="$Cyan\h$Yellow(\W)$BBlue\$(__git_ps1)$BWhite> $Color_Off"
 
 #  Setting initial paths for myself
 
